@@ -3,7 +3,8 @@ const config = require('./config.json');
 const { consumerkey, consumersecret, token, secrettoken } = config;
 const schedule = require('node-schedule');
 const odklejeniec = 'RandomBruce';
-
+const minute = 00;
+const hour = 15;
 var status;
 
 const Twit = new T({
@@ -18,7 +19,7 @@ function generatePercentage() {
     status = `${odklejeniec} is ${unglued}% unglued `
 }
 
-const post_tweet = schedule.scheduleJob('13 16 * * *', function() {
+const post_tweet = schedule.scheduleJob(`${minute} ${hour} * * *`, function() {
     generatePercentage();
 
     Twit.post('statuses/update', {status: status}, function(err, data, response) {
