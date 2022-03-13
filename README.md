@@ -1,4 +1,4 @@
-# Twitter-Unglue-Counter
+# Twitter Unglue Counter
 This bot allows you to count how much unglued(odklejony) is selected person
 
 # All dependencies you need to use it are: 
